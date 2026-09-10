@@ -63,11 +63,11 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-black text-white py-4 px-4 sm:px-6 lg:px-8"
+      className="relative w-full overflow-hidden bg-black text-white py-2 px-3 sm:px-6 lg:px-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="max-w-7xl mx-auto relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 h-[480px] sm:h-[540px] md:h-[600px] flex items-center justify-center">
+      <div className="max-w-7xl mx-auto relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10 h-[calc(100vh-6.5rem)] max-h-[460px] sm:max-h-[520px] md:max-h-[560px] flex items-center justify-center">
         
         {/* Carousel Slides */}
         {defaultSlides.map((slide, index) => {
@@ -95,11 +95,11 @@ export default function HeroCarousel() {
                   /* Blank Image Placeholder Visual Frame */
                   <div className="w-full h-full flex flex-col items-center justify-center border-2 border-dashed border-white/15 bg-zinc-900/40 relative">
                     {/* Decorative Grid Pattern Overlay */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
                     
                     {/* Placeholder Icon Badge */}
                     <div className="relative z-10 flex flex-col items-center gap-2 text-white/30">
-                      <svg className="w-16 h-16 stroke-current" fill="none" viewBox="0 0 24 24">
+                      <svg className="w-12 h-12 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                       <span className="text-xs font-mono tracking-widest uppercase font-semibold">
@@ -112,32 +112,32 @@ export default function HeroCarousel() {
               </div>
 
               {/* Slide Content Overlay */}
-              <div className="relative z-20 max-w-4xl px-6 sm:px-12 text-center flex flex-col items-center">
+              <div className="relative z-20 max-w-4xl px-4 sm:px-10 text-center flex flex-col items-center">
                 {slide.badge && (
-                  <span className="inline-block bg-[#3B388D] text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 shadow-lg border border-white/15 animate-bounce">
+                  <span className="inline-block bg-[#3B388D] text-white text-[11px] font-black px-3.5 py-1 rounded-full uppercase tracking-widest mb-3 shadow-lg border border-white/15 animate-bounce">
                     {slide.badge}
                   </span>
                 )}
                 
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-4 leading-tight drop-shadow-md">
+                <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-3 leading-tight drop-shadow-md">
                   {slide.title}
                 </h1>
                 
-                <p className="text-sm sm:text-lg md:text-xl text-zinc-300 max-w-2xl font-medium mb-8 leading-relaxed">
+                <p className="text-xs sm:text-base md:text-lg text-zinc-300 max-w-2xl font-medium mb-6 leading-relaxed">
                   {slide.subtitle}
                 </p>
 
                 {/* Hero Action Buttons */}
-                <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex flex-wrap items-center justify-center gap-3">
                   <Link
                     href="#services"
-                    className="bg-[#e61e2b] hover:bg-red-600 text-white font-extrabold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider transition-all duration-300 shadow-xl hover:scale-105 active:scale-95"
+                    className="bg-[#e61e2b] hover:bg-red-600 text-white font-extrabold text-xs sm:text-sm px-6 py-2.5 rounded-full uppercase tracking-wider transition-all duration-300 shadow-xl hover:scale-105 active:scale-95"
                   >
                     OUR SERVICES
                   </Link>
                   <Link
                     href="#contact"
-                    className="bg-white/15 hover:bg-white/25 border border-white/20 text-white font-extrabold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider transition-all duration-300 backdrop-blur-md hover:scale-105 active:scale-95"
+                    className="bg-white/15 hover:bg-white/25 border border-white/20 text-white font-extrabold text-xs sm:text-sm px-6 py-2.5 rounded-full uppercase tracking-wider transition-all duration-300 backdrop-blur-md hover:scale-105 active:scale-95"
                   >
                     GET FREE QUOTE
                   </Link>
@@ -152,9 +152,9 @@ export default function HeroCarousel() {
           onClick={prevSlide}
           type="button"
           aria-label="Previous Slide"
-          className="absolute left-4 sm:left-6 z-30 p-3 rounded-full bg-black/40 hover:bg-black/80 text-white border border-white/20 transition-all duration-300 hover:scale-110 active:scale-95 backdrop-blur-md"
+          className="absolute left-3 sm:left-5 z-30 p-2.5 rounded-full bg-black/40 hover:bg-black/80 text-white border border-white/20 transition-all duration-300 hover:scale-110 active:scale-95 backdrop-blur-md"
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -164,15 +164,15 @@ export default function HeroCarousel() {
           onClick={nextSlide}
           type="button"
           aria-label="Next Slide"
-          className="absolute right-4 sm:right-6 z-30 p-3 rounded-full bg-black/40 hover:bg-black/80 text-white border border-white/20 transition-all duration-300 hover:scale-110 active:scale-95 backdrop-blur-md"
+          className="absolute right-3 sm:right-5 z-30 p-2.5 rounded-full bg-black/40 hover:bg-black/80 text-white border border-white/20 transition-all duration-300 hover:scale-110 active:scale-95 backdrop-blur-md"
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Pagination Dots */}
-        <div className="absolute bottom-6 z-30 flex items-center gap-3">
+        <div className="absolute bottom-4 z-30 flex items-center gap-2.5">
           {defaultSlides.map((_, idx) => (
             <button
               key={idx}
@@ -181,8 +181,8 @@ export default function HeroCarousel() {
               aria-label={`Go to slide ${idx + 1}`}
               className={`transition-all duration-300 rounded-full ${
                 idx === currentSlide
-                  ? "w-8 h-2.5 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"
-                  : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
+                  ? "w-7 h-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                  : "w-2 h-2 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}
